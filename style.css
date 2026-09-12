@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600&display=swap');
 
 
-/* =========================================
-   VARIÁVEIS
-========================================= */
-
 :root {
     --preto: #050505;
     --borda: #242124;
@@ -14,19 +10,17 @@
 }
 
 
-/* =========================================
-   RESET
-========================================= */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
+
 
 body {
     background: var(--preto);
@@ -36,9 +30,9 @@ body {
 }
 
 
-/* =========================================
+/* =========================
    CABEÇALHO
-========================================= */
+========================= */
 
 header {
     border-bottom: 1px solid var(--borda);
@@ -46,8 +40,6 @@ header {
     text-align: center;
 }
 
-
-/* TÍTULO JAPONÊS */
 
 .titulo h1 {
     font-family: "Noto Serif JP", serif;
@@ -60,8 +52,6 @@ header {
 }
 
 
-/* HIRAGANA VERMELHO */
-
 .titulo p {
     color: var(--vermelho);
     font-size: 0.95rem;
@@ -72,9 +62,9 @@ header {
 }
 
 
-/* =========================================
-   NAVEGAÇÃO
-========================================= */
+/* =========================
+   MENU
+========================= */
 
 nav {
     display: flex;
@@ -86,6 +76,7 @@ nav {
 
     animation: aparecer 1.5s ease;
 }
+
 
 nav a {
     position: relative;
@@ -100,12 +91,11 @@ nav a {
 }
 
 
-/* LINHA VERMELHA ABAIXO DO LINK */
-
 nav a::after {
     content: "";
 
     position: absolute;
+
     left: 0;
     bottom: -6px;
 
@@ -117,44 +107,67 @@ nav a::after {
     transition: width 0.3s ease;
 }
 
+
 nav a:hover {
     color: var(--texto);
     transform: translateY(-2px);
 }
+
 
 nav a:hover::after {
     width: 100%;
 }
 
 
-/* =========================================
+/* =========================
    CONTEÚDO
-========================================= */
+========================= */
 
 main {
     width: min(1050px, 90%);
     margin: 0 auto;
 }
 
+
 section {
     padding: 75px 0;
     border-bottom: 1px solid var(--borda);
 }
+
 
 section:last-child {
     border-bottom: none;
 }
 
 
-/* =========================================
-   HERO / PRIMEIRA PARTE
-========================================= */
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+
+p {
+    color: var(--texto-suave);
+}
+
+
+/* =========================
+   HERO DA PÁGINA INICIAL
+========================= */
 
 .hero {
     min-height: 55vh;
 
     display: flex;
     flex-direction: column;
+
     justify-content: center;
     align-items: center;
 
@@ -163,8 +176,6 @@ section:last-child {
     animation: aparecer 1s ease;
 }
 
-
-/* TEXTO JAPONÊS VERMELHO */
 
 .japones {
     font-family: "Noto Serif JP", serif;
@@ -178,34 +189,15 @@ section:last-child {
     letter-spacing: 1px;
 }
 
+
 .hero h2 {
     margin-bottom: 18px;
 }
 
 
-/* =========================================
-   TÍTULOS
-========================================= */
-
-h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-h3 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-}
-
-p {
-    color: var(--texto-suave);
-}
-
-
-/* =========================================
+/* =========================
    CARDS
-========================================= */
+========================= */
 
 .cards {
     display: grid;
@@ -217,8 +209,6 @@ p {
     margin-top: 30px;
 }
 
-
-/* CARD */
 
 .card {
     position: relative;
@@ -240,36 +230,7 @@ p {
 }
 
 
-/* ANIMAÇÃO DOS CARDS
-   Cada card aparece um pouco depois do anterior
-*/
-
-.cards .card:nth-child(1) {
-    animation-delay: 0.15s;
-}
-
-.cards .card:nth-child(2) {
-    animation-delay: 0.30s;
-}
-
-.cards .card:nth-child(3) {
-    animation-delay: 0.45s;
-}
-
-.cards .card:nth-child(4) {
-    animation-delay: 0.60s;
-}
-
-.cards .card:nth-child(5) {
-    animation-delay: 0.75s;
-}
-
-.cards .card:nth-child(6) {
-    animation-delay: 0.90s;
-}
-
-
-/* BARRA VERMELHA NO TOPO DO CARD */
+/* barra vermelha */
 
 .card::before {
     content: "";
@@ -288,39 +249,78 @@ p {
 }
 
 
-/* HOVER */
+/* animação dos cards */
+
+.cards .card:nth-child(1) {
+    animation-delay: 0.15s;
+}
+
+
+.cards .card:nth-child(2) {
+    animation-delay: 0.30s;
+}
+
+
+.cards .card:nth-child(3) {
+    animation-delay: 0.45s;
+}
+
+
+.cards .card:nth-child(4) {
+    animation-delay: 0.60s;
+}
+
+
+.cards .card:nth-child(5) {
+    animation-delay: 0.75s;
+}
+
+
+.cards .card:nth-child(6) {
+    animation-delay: 0.90s;
+}
+
+
+/* hover dos cards */
 
 .card:hover {
     transform: translateY(-8px);
 
     border-color: var(--vermelho);
 
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.45);
 }
+
 
 .card:hover::before {
     width: 100%;
 }
 
 
-/* CONTEÚDO DO CARD */
-
 .card h3 {
     transition: color 0.3s ease;
 }
 
+
 .card:hover h3 {
     color: var(--vermelho);
 }
+
 
 .card p {
     margin-bottom: 12px;
 }
 
 
-/* =========================================
+strong {
+    color: var(--texto);
+}
+
+
+/* =========================
    BOTÕES
-========================================= */
+========================= */
 
 .link-btn {
     display: inline-block;
@@ -341,6 +341,7 @@ p {
         transform 0.3s ease;
 }
 
+
 .link-btn:hover {
     background: var(--vermelho);
 
@@ -350,18 +351,90 @@ p {
 }
 
 
-/* =========================================
-   DESTAQUES
-========================================= */
+/* =========================
+   TABELAS
+========================= */
 
-strong {
+.tabela-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    margin-top: 35px;
+}
+
+
+table {
+    width: 100%;
+
+    min-width: 600px;
+
+    border-collapse: collapse;
+
+    background: #090909;
+}
+
+
+th,
+td {
+    border: 1px solid var(--borda);
+
+    padding: 14px;
+
+    text-align: center;
+}
+
+
+th {
+    background: #0d0d0d;
+
+    color: var(--vermelho);
+
+    font-weight: 600;
+}
+
+
+td {
+    color: var(--texto-suave);
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+
+td:hover {
+    background: #151515;
+
     color: var(--texto);
 }
 
 
-/* =========================================
+/* caracteres japoneses da tabela */
+
+table th:not(:first-child) {
+    font-family: "Noto Serif JP", serif;
+
+    font-size: 1.5rem;
+
+    color: var(--texto);
+}
+
+
+/* kanji */
+
+.kanji {
+    font-family: "Noto Serif JP", serif;
+
+    font-size: 2rem;
+
+    color: var(--vermelho);
+}
+
+
+/* =========================
    RODAPÉ
-========================================= */
+========================= */
 
 footer {
     border-top: 1px solid var(--borda);
@@ -371,18 +444,17 @@ footer {
     padding: 35px 20px;
 }
 
+
 footer p {
     font-size: 0.85rem;
+
     margin: 3px 0;
 }
 
 
-/* =========================================
+/* =========================
    ANIMAÇÕES
-========================================= */
-
-
-/* Entrada geral */
+========================= */
 
 @keyframes aparecer {
 
@@ -395,10 +467,9 @@ footer p {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
 
-
-/* Entrada dos cards */
 
 @keyframes cardEntrar {
 
@@ -411,12 +482,13 @@ footer p {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
 
 
-/* =========================================
+/* =========================
    CELULAR
-========================================= */
+========================= */
 
 @media (max-width: 700px) {
 
@@ -427,6 +499,7 @@ footer p {
 
     .titulo h1 {
         font-size: 2rem;
+
         letter-spacing: 1px;
     }
 
@@ -438,6 +511,7 @@ footer p {
 
     nav {
         gap: 16px;
+
         margin-top: 20px;
     }
 
@@ -477,10 +551,11 @@ footer p {
     }
 
 
-    /* CARDS VIRAM UMA COLUNA */
+    /* cards viram uma coluna */
 
     .cards {
         grid-template-columns: 1fr;
+
         gap: 15px;
     }
 
@@ -488,12 +563,33 @@ footer p {
     .card {
         padding: 20px;
     }
+
+
+    /* tabela pode deslizar para os lados */
+
+    .tabela-container {
+        margin-top: 25px;
+
+        overflow-x: auto;
+    }
+
+
+    table {
+        min-width: 600px;
+    }
+
+
+    th,
+    td {
+        padding: 11px 9px;
+    }
+
 }
 
 
-/* =========================================
-   REDUÇÃO DE ANIMAÇÕES
-========================================= */
+/* =========================
+   REDUÇÃO DE MOVIMENTO
+========================= */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -501,11 +597,16 @@ footer p {
         scroll-behavior: auto;
     }
 
+
     *,
     *::before,
     *::after {
+
         animation-duration: 0.01ms !important;
+
         animation-iteration-count: 1 !important;
+
         transition: none !important;
     }
+
 }
